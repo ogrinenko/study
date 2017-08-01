@@ -17,7 +17,7 @@ public class TestClass {
 		TestClass tC = new TestClass();
 		
 		Array arr = new Array();
-		arr.printSomeArray();
+		System.out.println(arr.printSomeArray());
 		
 	}
 
