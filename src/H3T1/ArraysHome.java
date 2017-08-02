@@ -5,9 +5,11 @@ import java.util.Random;
 
 public class ArraysHome {
 
-	//int arrayFromRandom [] = new int[10];
-	
-	
+	/**
+	 * Method fill any array  with Random Int numbers
+	 * @param array
+	 * @return
+	 */
 	public int[] fillArrayWithRandom(int[] array)
 	{
 		Random newRan = new Random();
@@ -18,6 +20,11 @@ public class ArraysHome {
 		return array;
 	}
 	
+	/**
+	 * Method finds maximum element in array 
+	 * @param array
+	 * @return
+	 */
 	public int findMaximumInArray(int[] array)
 	{
 		int res = array[0];
@@ -31,6 +38,11 @@ public class ArraysHome {
 		return res;
 	}
 	
+	/**
+	 * Calculate and return SUMM of all Even items in Array
+	 * @param array
+	 * @return
+	 */
 	public int summOfAllEvenItemsInArray(int[] array)
 	{
 		int res = 0;
@@ -44,6 +56,12 @@ public class ArraysHome {
 		return res;
 	}
 	
+	
+	/**
+	 * Finds minimum Odd element in Array
+	 * @param array
+	 * @return
+	 */
 	public int findMinOddItemInArray(int[] array)
 	{
 		int min = array[0];
@@ -57,7 +75,10 @@ public class ArraysHome {
 		return min;
 	}
 	
-	
+	/**
+	 * Method prints input String by each characters from new Line
+	 * @param str
+	 */
 	public void printEachCharacterOfStringInNewLine(String str)
 	{
 		char[] charArray = str.toCharArray();
@@ -67,7 +88,12 @@ public class ArraysHome {
 		}
 	}
 	
-	
+	/**
+	 * Method prints numbers from 1 to 100 and replace numbers that could be divided in 3 to Fizz, 
+	 * divided in 5 to Buzz and could be divided in both 3 and 5 to  FizzBuzz
+	 * @param startNumber
+	 * @param stopNumber
+	 */
 	public void printNumbersThatCouldBeDividedToThreeAndFive(int startNumber, int stopNumber) {
 		System.out.println("Numbers from 1 to 100:");
 		
@@ -90,16 +116,21 @@ public class ArraysHome {
 				System.out.println(i);
 			}
 		}
-		
-		
 	}
 	
-	
-	public int[] reverceSortingOfIntArray(int[] array)
+	/**
+	 * Method prints Array in reverse order
+	 * @param array
+	 * @return
+	 */
+	public int[] reverseSortingOfIntArray(int[] array)
 	{
-		
-		
-		
+		for (int i = 0; i < array.length/2; i++)
+		{
+			int tmp = array[i];
+			array[i] = array[array.length-1-i];
+			array[array.length-1-i] = tmp;
+		}
 		return array;
 	}
 	
@@ -136,7 +167,7 @@ public class ArraysHome {
 		// Task 5 - Print numbers from 1 to 100 and replace % 3/5 to Fizz and Buzz
 		myArrays.printNumbersThatCouldBeDividedToThreeAndFive(1,100);
 		
-		// Task 6 - switch value of two variable without addditional one
+		// Task 6 - switch value of two variable without additional one
 		int firstValue = 10;
 		int secondValue = 15;
 		System.out.println("First Value: " + firstValue + ", Second Value: " +  secondValue);
@@ -148,13 +179,11 @@ public class ArraysHome {
 		System.out.println("First Value: " + firstValue + ", Second Value: " +  secondValue);
 		
 		// Task 7 - Array Reverse Sorting
-		int[] newReverseArray = new int[10];
+		int[] newReverseArray = new int[9];
 		newReverseArray = myArrays.fillArrayWithRandom(newReverseArray);
 		System.out.println("Array - " + Arrays.toString(newReverseArray));
-		newReverseArray = myArrays.reverceSortingOfIntArray(newReverseArray);
-		System.out.println("Reversed Array is:" + newReverseArray);
-		
-		
+		newReverseArray = myArrays.reverseSortingOfIntArray(newReverseArray);
+		System.out.println("Reversed Array is:" + Arrays.toString(newReverseArray));
 		
 	}
 
