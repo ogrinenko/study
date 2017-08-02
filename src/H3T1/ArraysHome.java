@@ -97,7 +97,7 @@ public class ArraysHome {
 	public void printNumbersThatCouldBeDividedToThreeAndFive(int startNumber, int stopNumber) {
 		System.out.println("Numbers from 1 to 100:");
 		
-		for (int i = 1; i < 101; i ++)
+		for (int i = startNumber; i <= stopNumber; i ++)
 		{
 			if ((i%3 == 0) && (i%5 == 0))
 			{
