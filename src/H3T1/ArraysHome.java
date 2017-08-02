@@ -39,16 +39,16 @@ public class ArraysHome {
 	}
 	
 	/**
-	 * Calculate and return SUMM of all Even items in Array
+	 * Calculate and return SUMM of all Even values in Array
 	 * @param array
 	 * @return
 	 */
 	public int summOfAllEvenItemsInArray(int[] array)
 	{
 		int res = 0;
-		for (int i = 1;  i < array.length ;i += 2)
+		for (int i = 0;  i < array.length ;i ++)
 		{
-			if (array[i] > res)
+			if (array[i]%2 == 0)
 			{
 				res += array[i];
 			}
@@ -143,7 +143,7 @@ public class ArraysHome {
 		int[] newArray = new int[10]; 
 		newArray  = myArrays.fillArrayWithRandom(newArray); 
 		System.out.println("Array - " + Arrays.toString(newArray));
-		double maxInArray = myArrays.findMaximumInArray(newArray);
+		int maxInArray = myArrays.findMaximumInArray(newArray);
 		System.out.println("Max item in current Array is:" + maxInArray );
 		
 		//Task 2 - Summ of all even numbers in Array
