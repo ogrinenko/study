@@ -1,17 +1,19 @@
 package T5;
 
-import java.util.LinkedHashSet;
-
+import java.util.ArrayList;
+import java.util.HashSet;
 
 import T5.University.*;
 
 public class ElectionCommission {
+
 	
 
 	public static void main(String[] args) {
 
 		// Create Teachers 
-		LinkedHashSet<Teacher> allTeachers = new LinkedHashSet<Teacher>();
+		HashSet<Teacher> allTeachers = new HashSet<Teacher>();
+		allTeachers.add(new Teacher("Vladimir", "Sencov", Specialization.MATHEMATICS));
 		allTeachers.add(new Teacher("Vladimir", "Sencov", Specialization.MATHEMATICS));
 		allTeachers.add(new Teacher("Vitalii", "Tsygan", Specialization.PHYSICS));
 		allTeachers.add(new Teacher("Elena", "Kravets", Specialization.LITERATURE));
@@ -19,7 +21,7 @@ public class ElectionCommission {
 		allTeachers.add(new Teacher("Viktoriia", "Bondarenko", Specialization.PHILOSOPHY));
 		
 		// Create 12 Students to be analyzed
-		LinkedHashSet<Students> allStudents = new LinkedHashSet<Students>();
+		HashSet<Students> allStudents = new HashSet<Students>();
 		
 		allStudents.add(new Students("Ivan", "Sokol", Specialization.PHYSICS, StudentsCource.FIRST));
 		allStudents.add(new Students("Ivan", "Mikhailenko", Specialization.PHILOSOPHY, StudentsCource.SECOND));
@@ -35,6 +37,29 @@ public class ElectionCommission {
 		allStudents.add(new Students("Dmitrii", "Nikitin", Specialization.MATHEMATICS, StudentsCource.FIFTH));
 		allStudents.add(new Students("Anton", "Zemlyanskii", Specialization.MATHEMATICS, StudentsCource.THIRD));
 		allStudents.add(new Students("Andrii", "Zinevich", Specialization.MATHEMATICS, StudentsCource.THIRD));
+		allStudents.add(new Students("Andrii", "Zinevich", Specialization.MATHEMATICS, StudentsCource.THIRD));
+		allStudents.add(new Students("Andrii", "Zinevich", Specialization.MATHEMATICS, StudentsCource.THIRD));
+		allStudents.add(new Students("Andrii", "Zinevich", Specialization.MATHEMATICS, StudentsCource.THIRD));
+		
+		// Form Groups based on Specialization with max group count
+		ArrayList<HashSet<Students>> dividedGroups = new ArrayList<HashSet<Students>>(); 
+//		for (Students s : allStudents) {
+//			
+//			switch (s.studentSpecialization) {
+//			case MATHEMATICS:
+//			//	dividedGroups.add(e)
+//				break;
+//
+//			
+//			}
+//			
+//			
+//			
+//		}
+		
+		dividedGroups = University.returnListOfPeoplesBasedOnTheirSpecialization(allStudents,Specialization.MATHEMATICS);
+		
+		
 		
 		// Assign All students to Teachers
 		for (Students s : allStudents) {

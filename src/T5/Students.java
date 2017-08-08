@@ -1,8 +1,10 @@
 package T5;
 
+import T5.University.*;
 
-public class Students extends University{
+public class Students  {
 
+	
 	// Students data fields
 	String studentFirstName;
 	String studentLastName;

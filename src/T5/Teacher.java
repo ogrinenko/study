@@ -1,13 +1,14 @@
 package T5;
 
-import java.util.LinkedHashSet;
+import T5.University.*;
+import java.util.HashSet;
 
-public class Teacher extends University{
+public class Teacher {
 	
 	/**
 	 * Teacher filed parameters
 	 */
-	LinkedHashSet<Students> students = new LinkedHashSet<>(20);
+	HashSet<Students> students = new HashSet<>(20);
 	String teacherFirstName;
 	String teacherLastName;
 	Specialization teacherSpecialization;
@@ -43,7 +44,7 @@ public class Teacher extends University{
 		if (displayLog) {
 			System.out.println(msg);
 		}
-		if (this.students.size() >= minGroupCount) {
+		if (this.students.size() >= University.minGroupCount) {
 			teacherHasGroup = true;
 		}
 			
@@ -54,7 +55,7 @@ public class Teacher extends University{
 	 * @param logging - enable/disable logging of students in Group 
 	 * @return
 	 */
-	protected LinkedHashSet<Students> getCurrentTeacherGroup(boolean logging) {
+	protected HashSet<Students> getCurrentTeacherGroup(boolean logging) {
 		if (logging) {
 			System.out.println("Current group of " + this.teacherFirstName + " " + this.teacherLastName + " for Specialization " + this.teacherSpecialization + " contains: " + students.size() + " students.");
 			for (Students s : this.students) {
@@ -71,7 +72,7 @@ public class Teacher extends University{
 	 */
 	protected boolean isGroupReadyToStartTeaching(boolean logging) {
 		boolean fullGroup = false;
-		if (this.getCurrentTeacherGroup(logging).size() >= minGroupCount) {
+		if (this.getCurrentTeacherGroup(logging).size() >= University.minGroupCount) {
 			fullGroup = true;
 		}
 		return fullGroup;
@@ -84,7 +85,7 @@ public class Teacher extends University{
 	 * @return
 	 * @throws Exception - There is not Teacher with desired Specialization
 	 */
-	public static Teacher returnTeacherBasedOnSpecialization(LinkedHashSet<Teacher> teachers, Specialization spec) throws Exception {
+	public static Teacher returnTeacherBasedOnSpecialization(HashSet<Teacher> teachers, Specialization spec) throws Exception {
 		Teacher necessaryTeacher = null;;
 		for (Teacher t : teachers) {
 			if (t.teacherSpecialization == spec)
