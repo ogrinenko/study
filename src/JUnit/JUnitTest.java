@@ -3,14 +3,24 @@ package JUnit;
 import java.util.Random;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JUnitTest {
+	
+	
+	
+	
+	
 
 	@Before 
-	public void beforeTest() {
+	public  void beforeTest() {
 		System.out.println("Before");
 	}
 	
@@ -30,7 +40,23 @@ public class JUnitTest {
 		System.out.println("2");
 	}
 	
+	@AfterClass
+	public static void afterAllTests() {
+		System.out.println("Exit");
+	}
 	
+	
+	@BeforeClass
+	public static void beforeAllTests() {
+		//final int t = 10;
+		System.out.println("Enter");
+	}
+	
+	
+	@Test 
+	public void thirdTest() {
+		System.out.println("3");
+	}
 	
 	@Test(expected=ArithmeticException.class)
 	public void TestValidatesZeroDivision() {
