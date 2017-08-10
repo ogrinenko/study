@@ -48,10 +48,10 @@ public class Array {
 		
 		String s = "String";
 		
-		for(char c : s.substring(0, s.length()))
-		{
-			System.out.println(c);
-		}
+//		for(char c : s.substring(0, s.length()))
+//		{
+//			System.out.println(c);
+//		}
 		
 		System.out.println("GG" + result);
 		System.out.println("GG" + sResult);
