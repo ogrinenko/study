@@ -2,16 +2,40 @@ package JUnit;
 
 import java.util.Random;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class JUnitTest {
 
+	@Before 
+	public void beforeTest() {
+		System.out.println("Before");
+	}
 	
-	@Test
+	@After 
+	public void afterTest() {
+		System.out.println("After");
+	}
+	
+	
+	@Test 
+	public void firstTest() {
+		System.out.println("1");
+	}
+	
+	@Test 
+	public void secondTest() {
+		System.out.println("2");
+	}
+	
+	
+	
+	@Test(expected=ArithmeticException.class)
 	public void TestValidatesZeroDivision() {
 		
-		try {
+	//	try {
 			
 		
 		// Arrange
@@ -29,12 +53,12 @@ public class JUnitTest {
 		
 		
 		
-		} catch (Exception exc) {
-			System.out.println(exc.getMessage());
-			Assert.assertTrue(exc.getMessage(), false);
-		} catch (Error err) {
-			System.out.println(err.getMessage());
-		}
+//		} catch (Exception exc) {
+//			System.out.println(exc.getMessage());
+//			Assert.assertTrue(exc.getMessage(), false);
+//		} catch (Error err) {
+//			System.out.println(err.getMessage());
+//		}
 		
 	}
 	

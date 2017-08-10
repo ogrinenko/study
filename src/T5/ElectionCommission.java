@@ -57,7 +57,7 @@ public class ElectionCommission {
 //			
 //		}
 		
-		dividedGroups = University.returnListOfPeoplesBasedOnTheirSpecialization(allStudents,Specialization.MATHEMATICS);
+		//dividedGroups = University.returnListOfPeoplesBasedOnTheirSpecialization(allStudents,Specialization.MATHEMATICS);
 		
 		
 		
