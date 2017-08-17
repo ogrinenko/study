@@ -1,0 +1,3 @@
+2017-08-10 11:39:32,659 WARN [main] loger.TestLogger.main(TestLogger.java:31) - Warn
+2017-08-10 11:39:32,659 ERROR [main] loger.TestLogger.main(TestLogger.java:32) - Error
+2017-08-10 11:39:32,659 FATAL [main] loger.TestLogger.main(TestLogger.java:33) - Fatal
