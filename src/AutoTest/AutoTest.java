@@ -16,16 +16,17 @@ public class AutoTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://Ukr.net");
-		WebElement webElementLogin = driver.findElement(By.cssSelector("input.login-block__input[type='text']"));
-		webElementLogin.sendKeys("immortal_cr@ukr.net");
-		WebElement webElementPassword = driver.findElement(By.cssSelector("input.login-block__input[type='password']"));
-		webElementPassword.sendKeys("ImMortal2011");
+		driver.manage().window().fullscreen();
+//		WebElement webElementLogin = driver.findElement(By.cssSelector("input.login-block__input[type='text']"));
+//		webElementLogin.sendKeys("immortal_cr@ukr.net");
+//		WebElement webElementPassword = driver.findElement(By.cssSelector("input.login-block__input[type='password']"));
+//		webElementPassword.sendKeys("ImMortal2011");
 		
 		driver.findElement(By.cssSelector("div.login-block__submit-but")).click();
 		
 		
 		
-		driver.quit();
+	//	driver.quit();
 		
 	}
 
